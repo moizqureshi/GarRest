@@ -8,7 +8,16 @@ var passport = require('passport');
 var authController = require('./controllers/auth');
 
 // Connect to the GarRest MongoDB
-mongoose.connect('mongodb://localhost:27017/GarRest');
+// Local MongoDB
+// mongoose.connect('mongodb://localhost:27017/GarRest');
+var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://heroku_app34999427:asn1a1fhc792eipiq892uethv0@ds041150.mongolab.com:41150/heroku_app34999427';
+mongoose.connect(uristring, function (err, res) {
+  if (err) {
+  console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  } else {
+  console.log ('Succeeded connected to: ' + uristring);
+  }
+});
 
 // Create our Express application
 var app = express();
