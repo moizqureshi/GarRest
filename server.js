@@ -39,7 +39,7 @@ router.route('/devices')
   .get(authController.isAuthenticated, deviceController.getDevices);
 
 // Create endpoint handlers for /devices/:devices_id
-router.route('/devices/:device')
+router.route('/devices/:device_id')
   .get(authController.isAuthenticated, deviceController.getDevice)
   .put(authController.isAuthenticated, deviceController.putDevice)
   .delete(authController.isAuthenticated, deviceController.deleteDevice);
