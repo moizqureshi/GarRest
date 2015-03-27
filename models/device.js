@@ -1,7 +1,7 @@
 // Load required packages
 var mongoose = require('mongoose');
 
-// Define our beer schema
+// Define our device schema
 var DeviceSchema   = new mongoose.Schema({
   name: String,
   deviceId: String,
