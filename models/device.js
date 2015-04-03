@@ -3,14 +3,14 @@ var mongoose = require('mongoose');
 
 // Define our device schema
 var DeviceSchema   = new mongoose.Schema({
-  name: String,
-  deviceId: String,
-  location: String,
-  deviceState: String,
-  percentOpen: Number,
-  temperature: Number,
-  batteryPercent: Number,
-  co2Level: Number
+  nm: String,
+  id: String,
+  lo: String,
+  st: String,
+  pt: Number,
+  tc: Number,
+  bl: Number,
+  co: Number
 });
 
 // Export the Mongoose model
